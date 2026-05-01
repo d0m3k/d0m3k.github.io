@@ -1,0 +1,12 @@
+{{ define "main" }}
+<article class="readable-content">
+    <header>
+        <h1>{{ .Title }}</h1>
+        <small>{{ .Date.Format "2006-01-02" }}</small>
+    </header>
+    <div class="post-body">
+        {{ .Content }}
+    </div>
+    <a href="/posts/">← posts</a>
+</article>
+{{ end }}

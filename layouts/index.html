@@ -1,0 +1,27 @@
+{{ define "main" }}
+<div class="home-center">
+    {{ with .Site.Params.avatar }}
+        <img src="{{ . | relURL }}" alt="The picture of myself sitting on a glass floor in Shanghai Oriental Pearl." class="image-of-me">
+    {{ end }}
+
+    <h1>{{ .Site.Title }}</h1>
+    <p>{{ .Site.Params.description }}</p>
+
+    {{ with .Site.Params.announcement }}
+    <div class="announcement">
+        {{ . | markdownify }}
+    </div>
+    {{ end }}
+
+    <ul class="links">
+        {{ range .Site.Menus.main }}
+        <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+        {{ end }}
+    </ul>
+
+    <div style="opacity: 0.6; font-size: 0.8rem;">
+        <span class="date">{{ now.Format "2006" }}</span>
+    </div>
+</div>
+{{ end }}
+

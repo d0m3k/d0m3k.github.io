@@ -1,0 +1,14 @@
+{{ define "main" }}
+<div class="readable-content">
+    <h1>Blog</h1>
+    <ul class="post-list">
+        {{ range .Pages }}
+        <li>
+            <a href="{{ .Permalink }}" style="font-size: 1.5rem; font-weight: bold;">{{ .Title }}</a>
+            <small>{{ .Date.Format "2006-01-02" }}</small><br>
+        </li>
+        {{ end }}
+    </ul>
+    <a href="/">← home</a>
+</div>
+{{ end }}

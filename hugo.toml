@@ -1,0 +1,29 @@
+baseURL = "https://dom3k.pl"
+languageCode = "en"
+title = "Dominik Adamiak"
+
+[params]
+    description = "Coder, brother, life enjoyer"
+    avatar = "images/me.jpg"
+    announcement = "**New stuff!** See posts under 'blog' section."
+
+[[menu.main]]
+    name = "blog"
+    url = "/posts/"
+    weight = 1
+
+[[menu.main]]
+    name = "mail me"
+    url = "mailto:hello@dom3k.pl"
+    weight = 2
+
+
+[[menu.main]]
+    name = "github"
+    url = "https://github.com/d0m3k"
+    weight = 3
+
+[[menu.main]]
+    name = "linkedin"
+    url = "https://www.linkedin.com/in/dom3k"
+    weight = 4
