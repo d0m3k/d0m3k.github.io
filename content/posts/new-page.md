@@ -17,14 +17,14 @@ So the plan was simple: get the domain and the cheapest hosting possible with a 
 
 For years I've been using a few Polish operators in sequence that went like "we have nice cheap starter setup, and around year 3, we'll start billing 3x for the domain and 4x for the hosting, because you probably don't ever remember about this yearly invoice". Well, I actually do remember.
 
-My last move went to [OVH](https://www.ovhcloud.com/pl/domains/), wich is definitely cheap enough for .pl domain (and without predatory pricing for renewals), but has slightly too pricey for its starter hosting. Not a big deal, but why pay if you can just _not pay_?
+My last move went to [OVH](https://www.ovhcloud.com/pl/domains/), which is definitely cheap enough for .pl domain (and without predatory pricing for renewals), but is slightly too pricey for its starter hosting. Not a big deal, but why pay if you can just _not pay_?
 
-So I knew I can do following free things:
+So I knew I could do the following things for free:
 
 * Host a static page on GitHub Pages and point it to my domain
 * Use Cloudflare mail forwarding
 
-The missing part was, can I _send responses_ via this free setup? I didn't know that, but I asked someone who does, and Gemini told me: you can use [Brevo](https://www.brevo.com/) what will allow you to send 300 messages per SMTP per day, and if you don't like the watermark in the email, use [Resend.com](https://resend.com/). I actually didn't like the watermark, and daily limit of 100 mails sounded definitely good enough for my needs. It was settled.
+The missing part was, can I _send responses_ via this free setup? I didn't know that, but I asked someone who did, and Gemini told me: you can use [Brevo](https://www.brevo.com/) what will allow you to send 300 messages per SMTP per day, and if you don't like the watermark in the email, use [Resend.com](https://resend.com/). I actually didn't like the watermark, and daily limit of 100 mails sounded definitely good enough for my needs. It was settled.
 
 Buckle up, we're changing DNS and waiting for a lot of stuff.
 
@@ -49,4 +49,4 @@ When steps 3 and 5 will stop failing, you can enable "orange proxy" in Cloudflar
 
 That's it! The only thing I remain paying for is the .pl domain, which is around 80 PLN/year at the time this is written. And if you want to see how to setup hugo for simple generation of blogposts like this, just go and see [the repo that produces this page](https://github.com/d0m3k/d0m3k.github.io). 
 
-Don't hesitate to let me know if this is useful, and especially if not. You can find my contact on the [home page](/).
+Don't hesitate to let me know if this is useful, and especially if it is not. You can find my contact on the [home page](/).
