@@ -1,10 +1,14 @@
 ---
-title: From phone to cloud — my pocket-powered dev setup
+title: From phone to cloud — my pocket-powered dev setup made cheap
 fileName: phone-to-cloud
 tags:
 - self-hosting
 - android
 - cloudflare
+- mikrus
+- termux
+- pi
+- deepseek
 categories:
 - infrastructure
 date: 2026-07-12
@@ -12,7 +16,60 @@ lastMod: 2026-07-12
 draft: true
 ---
 
-I do all my side-project coding on a phone. It sounds absurd until you actually try it — and then it still sounds absurd, but in a fun way. Here's how the whole stack works, from the Android terminal to a live website, without a traditional computer in sight.
+Lots of things changed in my life recently, causing me to have less focus time and definitely less time in a fully-fledged multi-display setup. So it's hard to have a nice day full of hacking around. But, it's possible to have a small nuggest of time, allowing to brew ideas in between chores.
+
+And luckily for me, it's 2026, everyone is hyped about a thing or two, and one of these things will allow me to still work effectively.
+
+## A little trigger
+
+A man sometimes thinks to himself: I definitely need a VPS.
+
+It's also much, much easier to think so if you have access to  [mikrus](https://mikr.us/), fairly cheak VPS provider in Poland that does even cheaper thing -- [recycling](https://mikr.us/recykling.html) initiative that allows you to get some compute for literal 5 PLN[^1].
+
+So, I ended up with a shell for a dollar, and now I needed an idea how to utilise it.
+
+Luckily, there are fish.
+
+{{< figure src="/images/posts/fish-graffiti.jpg" link="/images/posts/fish-graffiti.jpg" target="_blank" caption="Have you seen one of these?" >}}
+
+We used to send, with a friend of mine, photos whenever we spot one of these. I thought that this may be the thing that will ocuppy my new (almost free) compute.
+
+So I sat at my laptop and started exactly what you would start in 2026: vibe coding.
+
+## Agentic YOLO laptop with `pi`
+
+I started with `pi` and API based usage of [Deepseek](https://platform.deepseek.com/usage). This was pretty good and amazing value for money -- I could deploy a lot using 10 CNY[^2] in credits. A friend of mine, when heard of my setup, sent me the [OpenCode Go link](https://opencode.ai/go?ref=HP6F8JZQP7), which indeed currently offers much more input tokens for the buck you give it.
+
+{{< figure src="/images/posts/pi-on-laptop.png" link="/images/posts/pi-on-laptop.png" target="_blank" caption="Pi running on my fedora. Note the bottom bar showing current limits in OpenCode Go, as well as Deepseek API topup level." >}}
+
+Now, this was pretty conventional, right? You can ask it for a thing or two, including implementing of showing the limit usage you see on screen. If you like this setup, consider [cloning the repo with it](https://github.com/d0m3k/pi-config).
+
+{{< note >}}
+**WORD OF WARNING:** `pi` has crazily wide rights if run directly on your machine, including reading/writing/running anything without asking for permissions. If you are ~~more paranoid~~ less reckless than me, consider wrapping it in some docker-based sandbox with limited disk access, or at least run via some less YOLOitic harnesses, like `opencode` or deepseek-pilled `reasonix`.
+{{< /note >}}
+
+Now, with kid crying over the head, one cannot simply keep on running around with laptop in hand. You need something that, well, fits in hand.
+
+Enter the Termux.
+
+{{< figure src="/images/posts/pi-on-phone.jpg" link="/images/posts/pi-on-phone.jpg" target="_blank" caption="Pi running on my S23+. What?" >}}
+
+Install the Temux via F-Droid, and you get pretty full-fledged terminal emulator with Linux with pretty proper `pkg` manager and real `bash` shell. Support for rendering pi is also very good, though plugins required some pi-assisted edits to work around the kinks (like [here](https://github.com/d0m3k/pi-config/commit/0f521f6ed7781a786bb5f8459a98461f1e688d0c)).
+
+It also gives you `ssh`. And PI can do everything it wants, so, if you provide your public keys to the remote, it will happily run, deploy, `scp` and do any other stuff at will.
+
+So you have Github for the code, and a small remote as "cloud" for your local dev setup now, that agent can reach on its own from either end.
+
+## A step further: `pi` and `tmux` on VPS
+
+After all, why not? We can push this to extreme and have a real-time rendering on both ends. It even auto-adapts to a smaller screen so that rendering is readable on both.
+
+This I found interesting, but not that usable really. What is really usable is making sure agents always push to github and that we have autodeploy on remote.
+
+
+
+
+# AI slop to remove below
 
 ## The phone: Termux
 
@@ -23,6 +80,8 @@ My daily driver is a Samsung Galaxy S23 (SM-S916B) running Android 16, with Term
 The big win is that the phone is always with me. Waiting for a tram? That's 10 minutes of coding. Lying in bed at 1 AM with a random idea? Open Termux and go. The constraint of a small screen and no mouse actually forces you to think more before typing, which isn't the worst thing.
 
 ## The AI sidekick: pi
+
+
 
 Pi is an AI coding agent that runs as a CLI tool (`pi`). Think of it as a terminal-native alternative to Cursor or Copilot, but it works over SSH, in tmux, and — crucially — inside Termux on a phone. It can read files, execute shell commands, edit code with surgical precision, and reason about architecture. It connects to various LLM providers; I use DeepSeek.
 
@@ -117,3 +176,9 @@ That's about 120 PLN/year total — less than a single month of a mid-tier VPS f
 Is coding on a phone practical? For professional work with large codebases and heavy IDEs, probably not. But for side projects, infrastructure tinkering, and the sheer joy of making things work in constrained environments, it's surprisingly capable. The ecosystem of Termux, cheap VPS providers, and Cloudflare's free tier makes it possible to run a full-stack application from a device that also takes phone calls.
 
 If any of this sounds interesting, the code is public: [github.com/d0m3k](https://github.com/d0m3k). Feel free to steal ideas, file issues, or just say hi.
+
+
+
+
+[^1]: Around 1.30 USD at the time of writing.
+[^2]: Now, this is again around 5.50PLN, which is still below 1.5 USD.
