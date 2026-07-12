@@ -66,7 +66,11 @@ After all, why not? We can push this to extreme and have a real-time rendering o
 
 This I found interesting, but not that usable really. What is really usable is making sure agents always push to github and that we have autodeploy on remote.
 
+Things to consider with this setup:
 
+* deepseek-v4-pro is very capable, fast, and cheap at the same time. I am able to use it as my daily driver for most of the development cases now. However, sometimes it blocks on something, even after a few prompts stays in impasse, especially when you have some slightly more complicated frontend related problem.
+* I then use glm-5.2. There weren't a problem it couldn't cope with. it even comes up with more elegant solutions to some problems I was not prompting it to solve (e.g. it wrote waiting script for deploys, rather than just trying once deepseek does). It is slower and much more expensive though.
+* for no-brainers or lots of data, I use deepseek-v4-flash. It's faster than I can read, and it seems to not touch my Go limits at all.
 
 
 # AI slop to remove below
