@@ -45,7 +45,7 @@ I started with `pi` and API based usage of [Deepseek](https://platform.deepseek.
 Now, this was pretty conventional, right? You can ask it for a thing or two, including implementing of showing the limit usage you see on screen. If you like this setup, consider [cloning the repo with it](https://github.com/d0m3k/pi-config).
 
 {{< note >}}
-**WORD OF WARNING:** `pi` has crazily wide rights if run directly on your machine, including reading/writing/running anything without asking for permissions. If you are ~~more paranoid~~ less reckless than me, consider wrapping it in some docker-based sandbox with limited disk access, or at least run via some less YOLOitic harnesses, like `opencode` or deepseek-pilled `reasonix`.
+**WORD OF WARNING:** `pi` has crazily wide rights if run directly on your machine, including reading/writing/running anything without asking for permissions. If you are ~~more paranoid~~ less reckless than me, consider [wrapping it in some docker-based sandbox with limited disk access](https://github.com/earendil-works/pi#permissions--containerization), extend pi with permission prompts, or run via some less YOLOitic harness, like `opencode` or deepseek-pilled `reasonix`.
 {{< /note >}}
 
 Now, with kid crying over the head, one cannot simply keep on running around with laptop in hand. You need something that, well, fits in hand.
