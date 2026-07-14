@@ -24,7 +24,7 @@ And luckily for me, it's 2026, everyone is hyped about a thing or two, and one o
 
 A man sometimes thinks to himself: I definitely need a VPS.
 
-It's also much, much easier to think so if you have access to  [mikrus](https://mikr.us/), fairly cheak VPS provider in Poland that does even cheaper thing -- [recycling](https://mikr.us/recykling.html) initiative that allows you to get some compute for literal 5 PLN[^1].
+It's also much, much easier to think so if you have access to  [mikrus](https://mikr.us/), fairly cheap VPS provider in Poland that does even cheaper thing -- [recycling](https://mikr.us/recykling.html) initiative that allows you to get some compute for literal 5 PLN[^1].
 
 So, I ended up with a shell for a dollar, and now I needed an idea how to utilise it.
 
